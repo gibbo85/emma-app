@@ -1,0 +1,49 @@
+/* Styling for each pattern item */
+.pattern-item {
+    overflow: hidden;
+    transition: transform 0.2s;
+}
+
+.pattern-item:hover {
+    transform: scale(1.05);
+    background-color: transparent; /* Add hover effect */
+}
+
+/* Button styles */
+.pattern-item button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    display: block;
+}
+
+/* Pattern image styling */
+.pattern-image {
+    width: 100%;
+    height: 200px; /* Adjust as necessary */
+    object-fit: cover;
+    border-radius: 10px;
+    
+}
+
+.pattern-name {
+
+    font-size: 18px;
+    color: #555;
+    text-align: left;
+
+  
+  }
+
+/* Completed patterns */
+.completed {
+    background-color: #e0ffe0;
+}
+
+.completed-label {
+    color: green;
+    font-size: 14px;
+}
+

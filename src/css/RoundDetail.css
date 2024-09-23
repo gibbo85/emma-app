@@ -1,0 +1,145 @@
+/* RoundDetail.css */
+
+.round-detail-container {
+    padding-top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin-top: -80px;
+    
+}
+
+.progress-container{
+    position: fixed;
+    bottom: 90px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    max-width: 400px; /* Limit width to match the container */
+    margin: 0 auto;
+}
+
+
+
+/*Desktop*/
+@media screen and (min-width: 769px) {
+    .round-detail-container {
+        grid-template-columns: 1fr;
+        
+    }
+
+    .round-detail-content {
+        max-width: 600px;
+        
+    }
+
+    .round-detail-image {
+        grid-column: 2 / 2;
+        width: calc(100% - 80px);
+        height: 400px; /* Adjust as necessary */
+        object-fit: cover;
+        border-radius: 10px;
+        margin: 20px;
+    }
+
+    .navigation-buttons {
+        
+        position: fixed;
+        bottom: 30px;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 20px;
+        max-width: 450px; /* Limit width to match the container */
+        margin: 0 auto;
+    }
+
+    .breadcrumbs-container{
+        position: fixed;
+        top:25px;
+        left: 280px;
+        z-index: 1003;
+    }
+
+}
+
+/*Mobile*/
+@media screen and (max-width: 768px) {
+    .round-detail-image {
+        width: 100%;
+        height: 300px; /* Adjust as necessary */
+        object-fit: cover;
+        border-radius: 10px;
+        margin-bottom: 5px;
+        
+    }
+
+    .navigation-buttons {
+        position: fixed;
+        bottom: 30px;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 20px;
+        max-width: 450px; /* Limit width to match the container */
+        margin: 0 auto;
+    }
+    
+    .round-detail-container {
+        padding: 10px 40px;
+    }
+
+    .breadcrumbs-container{
+        position: fixed;
+        top:25px;
+        left: 20px;
+    }
+  
+  }
+
+.back-button {
+    padding: 15px 40px;
+    margin: 0 10px;
+    color: #fff;
+    background-color: #8d8e8f;
+    transition: background-color 0.3s;
+}
+
+.next-button {
+    padding: 15px 40px;
+    margin: 0 10px;
+    transition: background-color 0.3s;
+}
+
+.nav-button:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+}
+
+.nav-button:not(:disabled):hover {
+    background-color: #0056b3;
+}
+
+.back-button:disabled {
+    background-color: #e4e4e4;
+    cursor: not-allowed;
+}
+
+/* Complettion */
+
+.completion-message {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.completion-message p {
+    font-size: 18px;
+    font-weight: bold;
+    color: green;
+    margin-bottom: 20px;
+}

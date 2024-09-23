@@ -1,0 +1,27 @@
+.complete-container {
+    padding-top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin-top: -80px;
+    
+}
+
+.complete-buttons{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 120px;
+    
+    align-items: center;
+}
+
+.complete-primary-button{
+    width: calc(100% - 40px);
+}
+
+.complete-secondary-button{
+    width: calc(100% - 40px);
+    background: grey;
+}

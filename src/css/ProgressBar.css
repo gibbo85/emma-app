@@ -1,0 +1,15 @@
+/* ProgressBar.css */
+.progress-bar-container {
+    width: 100%;
+    background-color: #e0e0e0; /* Light grey background */
+    border-radius: 10px;
+    overflow: hidden; /* To round corners on progress bar fill */
+    height: 20px; /* Height of the progress bar */
+    margin: 20px 0; /* Space around the progress bar */
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background-color: #4caf50; /* Green fill */
+    transition: width 0.3s ease; /* Smooth transition for progress */
+}

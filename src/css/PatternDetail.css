@@ -1,0 +1,101 @@
+
+.pattern-detail-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    width: 100%; /* Make it responsive to the screen size */
+    max-width: 1200px; /* Prevents the container from getting too wide */
+    margin: 0 auto; /* Centers the container on larger screens */
+    
+}
+
+/*Desktop*/
+@media screen and (min-width: 769px) {
+    .pattern-detail-container {
+        grid-template-columns: 45% 55%;
+    }
+
+    .pattern-detail-content {
+        grid-column: 1 / 2;
+        grid-row: 1;
+    }
+
+    .pattern-detail-image {
+        grid-column: 2 / 2;
+        width: calc(100% - 40px);
+        height: 600px; /* Adjust as necessary */
+        object-fit: cover;
+        border-radius: 10px;
+        margin-right: 40px;
+        margin-top: 20px;
+    }
+
+    .start-button{
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .button-container{
+        display: flex;
+        justify-content: center; /* Horizontally centers the button */
+        margin-top: 60px;     
+    }
+
+}
+
+/*Mobile*/
+@media screen and (max-width: 768px) {
+
+    .pattern-detail-container {
+        margin: 20px;
+        width: calc(100% - 40px);
+    }
+
+    .pattern-detail-image {
+        width: 100%;
+        height: 200px; /* Adjust as necessary */
+        object-fit: cover;
+        border-radius: 10px;
+        margin-bottom: 5px;
+        
+    }
+
+    .start-button{
+        width: 100%;
+        max-width: 400px;
+        
+    }
+
+    .button-container{
+        display: flex;
+        justify-content: center; /* Horizontally centers the button */
+        margin: 20px;
+        position: fixed; /* Fix the container to the bottom of the viewport */
+        bottom: 0; /* Align to the bottom */
+        left: 0; /* Align to the left */
+        width: calc(100% - 40px);
+        z-index: 1000;
+        
+    }
+
+    .pattern-detail-content {
+        padding-bottom: 100px;
+    }
+  
+  }
+
+  /* Media query for larger screens (Desktop)
+@media screen and (min-width: 769px) {
+    .pattern-detail-container{
+        flex-direction: row; /* Switch to two columns on larger screens
+        justify-content: space-between; /* Optional: adds space between columns
+    }
+
+    .product-image, .product-details {
+        flex: 1; /* Make each column take up equal width 
+    }
+
+    .product-image {
+        margin-right: 20px; /* Add space between the two columns 
+    }
+}*/

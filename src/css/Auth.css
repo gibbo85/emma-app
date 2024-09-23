@@ -1,0 +1,54 @@
+
+  .layout {
+    padding-top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+  }
+
+  .form_title {
+    margin-left: 0;
+    text-align: center;
+
+  }
+
+  .test_button {
+    width: 100%;
+    padding: 10px;
+    
+  }
+  
+  /* Input Fields */
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  input[type="email"]:focus,
+  input[type="password"]:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+
+  /* Message */
+.message {
+    margin-top: 20px;
+    text-align: center;
+    color: red;
+  }

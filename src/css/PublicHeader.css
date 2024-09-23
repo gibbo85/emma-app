@@ -1,0 +1,27 @@
+
+.public-header {
+  background: #ffffff; 
+  position: fixed; /* Fixes the header at the top */
+  height: 60px;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Ensures the header is above other content */
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.logo {
+  font-size: 1.8em;
+  margin: 0;
+  padding-left: 40px;
+}
+
+.auth-links {
+  margin-left: auto; /* Pushes the auth links to the right */
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-right: 40px; /* Add space between the links */
+}

@@ -1,0 +1,72 @@
+
+.auth-header {
+  background: #ffffff; 
+  position: fixed; /* Fixes the header at the top */
+  height: 60px;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Ensures the header is above other content */
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.toggles-container {
+  margin-left: auto;
+  margin-right: 40px;
+}
+
+.counter-button {
+  width: 40px;
+  padding: 10px;
+  background-color: rgb(255, 255, 255);
+  color: #555;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.counter-button:hover {
+  background-color: #ffffff;
+}
+
+
+@media screen and (min-width: 768px) {
+  .auth-header {
+    left: 260px;
+    border-bottom: 0px solid #eeeeee;
+  }
+
+  .hamburger{
+    display: none;
+  }
+
+  .auth-logo {
+    display: none;
+  }
+
+}
+
+.auth-logo {
+  font-size: 1.8em;
+  margin: 0;
+  padding-left: 30px;
+}
+
+
+.hamburger {
+  width: 40px;
+  padding: 10px;
+  background-color: rgb(255, 255, 255);
+  color: #0056b3;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 28px;
+}
+
+.hamburger:hover {
+  background-color: #ffffff;
+}

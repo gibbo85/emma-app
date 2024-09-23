@@ -1,0 +1,152 @@
+/* General Menu Styles */
+.menu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  position: fixed;
+  top: 60px; /* Adjust based on header height */
+  left: 0;
+  height: calc(100vh - 60px); /* Adjust based on header height */
+  background-color: #f9f9f9;
+  width: 250px;
+  transform: translateX(-100%); /* Hide the menu off-screen by default */
+  transition: transform 0.3s ease; /* Smooth transition when opening */
+  z-index: 100; /* Ensure the menu is on top of other elements */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Space out the menu items */
+}
+
+.icon-spacing {
+  margin-right: 8px; /* Adjust the space as needed */
+}
+
+.logo-menu{
+  padding-left: 25px;
+}
+
+.logo-menu a{
+  color: #ffb673;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+.logout-button {
+  background: transparent;
+  font-size: 18px;
+  font-family: Quicksand;
+  color: #555;
+}
+
+.logout-button:hover {
+  background: transparent;
+  
+}
+
+/* Open State: When the menu is toggled */
+.menu.open {
+  transform: translateX(0); /* Slide the menu in */
+}
+
+/* Menu Items */
+.menu ul {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding-top: 20px;
+  padding-left: 10px; /* Allow menu items to take up all the vertical space */
+}
+
+.menu ul li {
+  padding: 20px;
+  transition: background-color 0.2s ease; /* Smooth hover effect */
+}
+
+.menu ul li a,
+.menu ul li .logout-button {
+  color: #555;
+  text-decoration: none;
+  display: block;
+  font-size: 18px;
+}
+
+.menu ul li a:hover,
+.logout-button:hover {
+  font-weight: bold; /* Keep text white on hover */
+}
+
+/* Profile Section at the bottom */
+.account-section {
+  padding: 20px;
+  padding-left: 25px;
+  background-color: #eeeeee; /* Darker background for the profile section */
+  display: flex;
+  align-items: center;
+}
+
+.profile-picture {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.account-section a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.account-section a:hover {
+  color: #007bff; /* Optional: change color on hover */
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .menu {
+    width: 200px; /* Slightly smaller on mobile */
+    transform: translateX(-100%); /* Hide the menu off-screen */
+  }
+
+  .menu.open {
+    transform: translateX(0); /* Slide the menu in */
+  }
+
+  .logo-menu{
+    display: none;
+  }
+}
+
+/* Desktop Styles */
+@media (min-width: 769px) {
+  .menu {
+    width: 250px;
+    transform: translateX(-100%); /* Hide the menu off-screen */
+    top: 0;
+    height: 100vh; /* Full height for desktop */
+  }
+
+  .menu.open {
+    transform: translateX(0); /* Slide the menu in */
+  }
+}
+
+/* Extra: Custom Scrollbar for Menu (Optional) */
+.menu {
+  overflow-y: auto; /* Scroll if content exceeds the viewport */
+}
+
+.menu::-webkit-scrollbar {
+  width: 6px;
+}
+
+.menu::-webkit-scrollbar-thumb {
+  background-color: #575757; /* Custom scrollbar color */
+  border-radius: 10px;
+}
