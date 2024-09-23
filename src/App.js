@@ -11,7 +11,6 @@ import Pattern from './components/pattern';
 import PatternDetail from './components/PatternDetail';
 import RoundDetail from './components/RoundDetail';
 import PatternComplete from './components/PatternComplete';
-import RoundCounter from './components/RoundCounter';
 
 import Header from './components/Header';
 import Menu from './components/Menu'; 
@@ -51,7 +50,7 @@ function App() {
 
   return (
     <AuthProvider>
-      <Router>
+      
         <Header isOpen={isOpen} isCounterOpen={isCounterOpen} toggleMenu={toggleMenu} toggleCounter={toggleCounter}/>
         <Menu isOpen={isOpen}/>
         <main>
@@ -74,7 +73,7 @@ function App() {
             } />
           </Routes>
         </main>
-      </Router>
+      
     </AuthProvider>
   );
 }
