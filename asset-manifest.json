@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/emma-app/static/css/main.73e7290b.css",
-    "main.js": "/emma-app/static/js/main.7ef4c2d8.js",
+    "main.js": "/emma-app/static/js/main.18465b93.js",
     "static/js/952.5194919b.chunk.js": "/emma-app/static/js/952.5194919b.chunk.js",
     "static/js/453.ad6eb26e.chunk.js": "/emma-app/static/js/453.ad6eb26e.chunk.js",
     "index.html": "/emma-app/index.html",
     "main.73e7290b.css.map": "/emma-app/static/css/main.73e7290b.css.map",
-    "main.7ef4c2d8.js.map": "/emma-app/static/js/main.7ef4c2d8.js.map",
+    "main.18465b93.js.map": "/emma-app/static/js/main.18465b93.js.map",
     "952.5194919b.chunk.js.map": "/emma-app/static/js/952.5194919b.chunk.js.map",
     "453.ad6eb26e.chunk.js.map": "/emma-app/static/js/453.ad6eb26e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.73e7290b.css",
-    "static/js/main.7ef4c2d8.js"
+    "static/js/main.18465b93.js"
   ]
 }
