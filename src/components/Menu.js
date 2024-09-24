@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../AuthContext2'; // Adjust the path as needed
 import '../css/Menu.css';
@@ -9,7 +9,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faInfoCircle, faConciergeBell, faPhone, faUser, faSignOut} from '@fortawesome/free-solid-svg-icons'; // Example icons
 
 
-const Menu = ({ isOpen }) => {
+const Menu = ({ isOpen, toggleMenu }) => {
+
+  const menuRef = useRef(null);
   
   // Handle logout
   const handleLogout = async () => {
@@ -26,10 +28,26 @@ const Menu = ({ isOpen }) => {
   // Show the menu only if user is logged in and on a protected page
   const showMenu = isProtectedPage;
 
+  useEffect(() => {
+    // Close the menu if clicked outside
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target) && isOpen) {
+        toggleMenu(); // Call the toggleMenu function passed as a prop
+      }
+    };
+
+    // Attach event listener
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      // Clean up the event listener
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isOpen, toggleMenu]);
+
   return (
     <div>
       {showMenu && (
-      <nav className={`menu ${isOpen ? 'open' : ''}`}>
+      <nav ref={menuRef} className={`menu ${isOpen ? 'open' : ''}`}>
         <h1 className="logo-menu"><Link to="/">MyApp</Link></h1>
         <ul>
           <li><Link to="/dashboard"> <FontAwesomeIcon icon={faHome} className="icon-spacing"/> Dashboard </Link></li>

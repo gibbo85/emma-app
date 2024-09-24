@@ -52,7 +52,7 @@ function App() {
     <AuthProvider>
       
         <Header isOpen={isOpen} isCounterOpen={isCounterOpen} toggleMenu={toggleMenu} toggleCounter={toggleCounter}/>
-        <Menu isOpen={isOpen}/>
+        <Menu isOpen={isOpen} toggleMenu={toggleMenu}/>
         <main>
           <Routes>
             <Route path="/" element={<Home />} />

@@ -11,7 +11,7 @@
   width: 250px;
   transform: translateX(-100%); /* Hide the menu off-screen by default */
   transition: transform 0.3s ease; /* Smooth transition when opening */
-  z-index: 100; /* Ensure the menu is on top of other elements */
+  z-index: 1001; /* Ensure the menu is on top of other elements */
   display: flex;
   flex-direction: column;
   justify-content: space-between; /* Space out the menu items */
