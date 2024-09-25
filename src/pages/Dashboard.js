@@ -17,9 +17,11 @@ export default function Dashboard() {
             <div className='breadcrumbs-container'>
             <Breadcrumbs breadcrumbs={breadcrumbs} />
             </div>
-
-            <h1>My Projects</h1>
+            <div className='dashboard-container'>
+            <h1>Welcome Emma!</h1>
             <PatternList patterns={patterns} />
+            </div>
+
         </div>
     );
 };

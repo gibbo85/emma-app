@@ -48,6 +48,7 @@
 
     .pattern-detail-container {
         margin: 20px;
+        margin-top: 50px;
         width: calc(100% - 40px);
     }
 

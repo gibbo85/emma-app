@@ -32,7 +32,9 @@ const Menu = ({ isOpen, toggleMenu }) => {
     // Close the menu if clicked outside
     const handleClickOutside = (event) => {
       if (menuRef.current && !menuRef.current.contains(event.target) && isOpen) {
-        toggleMenu(); // Call the toggleMenu function passed as a prop
+        if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
+          toggleMenu();
+        }
       }
     };
 
@@ -48,7 +50,7 @@ const Menu = ({ isOpen, toggleMenu }) => {
     <div>
       {showMenu && (
       <nav ref={menuRef} className={`menu ${isOpen ? 'open' : ''}`}>
-        <h1 className="logo-menu"><Link to="/">MyApp</Link></h1>
+        <h1 className="logo-menu"><Link to="/dashboard">MyApp</Link></h1>
         <ul>
           <li><Link to="/dashboard"> <FontAwesomeIcon icon={faHome} className="icon-spacing"/> Dashboard </Link></li>
           <li><a href="#about">

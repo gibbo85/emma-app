@@ -60,11 +60,12 @@
   width: 40px;
   padding: 10px;
   background-color: rgb(255, 255, 255);
-  color: #0056b3;
+  color: #ffb673;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   font-size: 28px;
+  margin-left: 10px;
 }
 
 .hamburger:hover {

@@ -18,7 +18,7 @@ return (
         ☰
       </button>
     
-      <h1 className="auth-logo"><Link to="/">MyApp</Link></h1>
+      <h1 className="auth-logo"><Link to="/dashboard">MyApp</Link></h1>
 
       <div className='toggles-container'>
       {isRoundDetailPage && (

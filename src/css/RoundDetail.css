@@ -61,7 +61,7 @@
     .breadcrumbs-container{
         position: fixed;
         top:25px;
-        left: 280px;
+        left: 290px;
         z-index: 1003;
     }
 
@@ -96,8 +96,11 @@
 
     .breadcrumbs-container{
         position: fixed;
-        top:25px;
+        top: 60px;
         left: 20px;
+        background: white;
+        width: 100%;
+        padding-top: 16px;
     }
   
   }
