@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/emma-app/static/css/main.cbd9415d.css",
-    "main.js": "/emma-app/static/js/main.a57635be.js",
+    "main.css": "/emma-app/static/css/main.0a84b07f.css",
+    "main.js": "/emma-app/static/js/main.36196d04.js",
     "static/js/952.5194919b.chunk.js": "/emma-app/static/js/952.5194919b.chunk.js",
     "static/js/453.ad6eb26e.chunk.js": "/emma-app/static/js/453.ad6eb26e.chunk.js",
     "index.html": "/emma-app/index.html",
-    "main.cbd9415d.css.map": "/emma-app/static/css/main.cbd9415d.css.map",
-    "main.a57635be.js.map": "/emma-app/static/js/main.a57635be.js.map",
+    "main.0a84b07f.css.map": "/emma-app/static/css/main.0a84b07f.css.map",
+    "main.36196d04.js.map": "/emma-app/static/js/main.36196d04.js.map",
     "952.5194919b.chunk.js.map": "/emma-app/static/js/952.5194919b.chunk.js.map",
     "453.ad6eb26e.chunk.js.map": "/emma-app/static/js/453.ad6eb26e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.cbd9415d.css",
-    "static/js/main.a57635be.js"
+    "static/css/main.0a84b07f.css",
+    "static/js/main.36196d04.js"
   ]
 }
