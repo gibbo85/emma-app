@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import contentfulClient from '../contentfulClient';
-import { saveProgress, getProgress } from '../api/progressApi'; // Import the getProgress function
+import { saveProgress, getProgress } from '../api/progressApi';
 import { supabase } from '../supabaseClient';
 import ProgressBar from './ProgressBar'; 
 import Breadcrumbs from './Breadcrumbs';
+import FullscreenImage from './FullscreenImage'; // Import the new Fullscreen component
 import '../css/PatternDetail.css';
 
 const PatternDetail = () => {
@@ -15,9 +16,9 @@ const PatternDetail = () => {
     const [currentStep, setCurrentStep] = useState(null);
     const [completed, setCompleted] = useState(false);
     const [patternDisplayName, setPatternDisplayName] = useState('');
+    const [isFullScreen, setIsFullScreen] = useState(false); // Manage fullscreen state
 
     useEffect(() => {
-        // Fetch the authenticated user
         const fetchUser = async () => {
             const { data: { user } } = await supabase.auth.getUser();
             setUser(user);
@@ -30,10 +31,10 @@ const PatternDetail = () => {
                 const response = await contentfulClient.getEntries({
                     content_type: 'pattern',
                     'fields.url': slug,
-                    include: 2 // Include references to instructions and rounds
+                    include: 2
                 });
                 if (response.items.length > 0) {
-                    const fetchedPattern = response.items[0]; // Get the pattern from the response
+                    const fetchedPattern = response.items[0];
                     setPattern(fetchedPattern);
                     setPatternDisplayName(fetchedPattern.fields.displayName);
                 }
@@ -46,7 +47,6 @@ const PatternDetail = () => {
     }, [slug]);
 
     useEffect(() => {
-        // Fetch the user's progress if the user and pattern are both available
         const fetchProgress = async () => {
             if (user && pattern) {
                 const progress = await getProgress(user.id, pattern.fields.url);
@@ -66,16 +66,14 @@ const PatternDetail = () => {
             const step = firstRound.fields.step;
 
             try {
-                // Ensure that user data is available before saving progress
                 if (user) {
-                    await saveProgress(user.id, slug, step, true); // Pass true to reset completed
-                    setCompleted(false); // Update state to reflect the reset
+                    await saveProgress(user.id, slug, step, true);
+                    setCompleted(false);
                 } else {
                     console.error('User is not authenticated');
                     return;
                 }
 
-                // Navigate to the first round of the pattern
                 navigate(`/${pattern.fields.url}/${step}`);
             } catch (error) {
                 console.error('Error saving progress:', error);
@@ -89,6 +87,14 @@ const PatternDetail = () => {
         }
     };
 
+    const handleImageClick = () => {
+        setIsFullScreen(true); // Trigger fullscreen when the image is clicked
+    };
+
+    const handleCloseFullScreen = () => {
+        setIsFullScreen(false); // Close fullscreen
+    };
+
     if (!pattern) {
         return <div>Loading...</div>;
     }
@@ -98,33 +104,38 @@ const PatternDetail = () => {
         : 'https://via.placeholder.com/200';
 
     const totalSteps = pattern.fields.instructions ? pattern.fields.instructions.length : 0;
-    //const PatternDisplayName = pattern.fields.displayName
-
-    const breadcrumbs = [
-        { name: 'Home', link: '/dashboard' },
-        { name: patternDisplayName}
-      ];
 
     return (
         <div className="layout2">
             <div className="pattern-detail-container">
-            <div className='breadcrumbs-container'>
-            <Breadcrumbs breadcrumbs={breadcrumbs} />
-            </div>
-                <img 
+                <div className='breadcrumbs-container'>
+                    <Breadcrumbs breadcrumbs={[{ name: 'Home', link: '/dashboard' }, { name: patternDisplayName }]} />
+                </div>
+
+                <img
+                    onClick={handleImageClick}
                     className='pattern-detail-image'
                     src={imageUrl}
                     alt={pattern.fields.displayName || 'Pattern Image'}
                 />
+
+                {isFullScreen && (
+                    <FullscreenImage
+                        imageUrl={imageUrl}
+                        onClose={handleCloseFullScreen}
+                    />
+                )}
+
                 <div className='pattern-detail-content'>
                     <h1>{pattern.fields.displayName}</h1>
                     <p>{pattern.fields.description}</p>
 
                     {completed ? (
-        <div className="completed-message">Pattern Completed</div>
-    ) : currentStep > 0 ? (
-        <ProgressBar currentStep={currentStep} totalSteps={totalSteps} />
-    ) : null}
+                        <div className="completed-message">Pattern Completed</div>
+                    ) : currentStep > 0 ? (
+                        <ProgressBar currentStep={currentStep} totalSteps={totalSteps} />
+                    ) : null}
+
                     <div className="button-container">
                         {completed ? (
                             <button onClick={handleStart} className="start-button">Restart</button>
