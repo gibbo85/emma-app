@@ -117,7 +117,6 @@ const RoundDetail = ({ isCounterOpen, toggleCounter }) => {
       { name: roundName } // No link for the current page
     ];
 
-
     return (
         
             <div className="round-detail-container"> 
